@@ -108,7 +108,7 @@ section{padding-block:56px}
 .sec-head h2{font-size:clamp(30px,4vw,46px);font-weight:800}
 .sec-head p{color:var(--muted);font-size:17px}
 
-.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .feat{border-radius:var(--r-l);padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
 .feat:hover{transform:translateY(-6px)}
 .feat h3{font-size:18px}
@@ -391,7 +391,8 @@ h1 em,h2 em,.serif{font-family:var(--f-serif);font-style:italic;font-weight:400;
 @media (max-width:960px){
   .hero{grid-template-columns:1fr;padding-top:36px}
   .stack{height:360px;max-width:520px}
-  .feats,.steps{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .feats{grid-template-columns:1fr}
   .plans{grid-template-columns:1fr;max-width:520px}
   .modal-card{grid-template-columns:1fr}
 }
@@ -497,7 +498,6 @@ h1 em,h2 em,.serif{font-family:var(--f-serif);font-style:italic;font-weight:400;
       <div class="feats">
         <div class="feat glass rv"><div class="w-ico" style="background:linear-gradient(135deg,#0a84ff,#5e5ce6)"><svg><use href="#i-phone"/></svg></div><h3 data-i18n="f1.t">Looks great on phones</h3><p data-i18n="f1.d"></p></div>
         <div class="feat glass rv"><div class="w-ico" style="background:linear-gradient(135deg,#ff9f0a,#ff375f)"><svg><use href="#i-bolt"/></svg></div><h3 data-i18n="f2.t">Fast loading</h3><p data-i18n="f2.d"></p></div>
-        <div class="feat glass rv"><div class="w-ico" style="background:linear-gradient(135deg,#30d158,#0a9f6a)"><svg><use href="#i-search"/></svg></div><h3 data-i18n="f3.t">Found on Google</h3><p data-i18n="f3.d"></p></div>
         <div class="feat glass rv"><div class="w-ico" style="background:linear-gradient(135deg,#bf5af2,#ff375f)"><svg><use href="#i-heart"/></svg></div><h3 data-i18n="f4.t">Support</h3><p data-i18n="f4.d"></p></div>
       </div>
     </section>
@@ -612,7 +612,7 @@ h1 em,h2 em,.serif{font-family:var(--f-serif);font-style:italic;font-weight:400;
 </template>
 
 <script>
-const PRICES={basic:300,standard:700,pro:2000};
+const PRICES={basic:200,standard:800,pro:1600};
 const T={
 en:{
 "nav.prices":"Prices","nav.features":"Benefits","nav.process":"Process","nav.contact":"Contact",
@@ -622,7 +622,6 @@ en:{
 "f.eye":"Every site includes","f.title":"What you get",
 "f1.t":"Looks great on phones","f1.d":"The design adapts to phones, tablets and computers.",
 "f2.t":"Fast loading","f2.d":"Pages open in a second, so visitors don’t leave.",
-"f3.t":"Found on Google","f3.d":"Set up so people can find your business in search.",
 "f4.t":"Help after launch","f4.d":"I stay in touch and help with changes after the site goes live.",
 "p.eye":"Prices","p.title":"Pick your plan","p.sub":"Plans differ by how beautiful and convenient the design is. Tap “See example” to compare the same site in three designs.",
 "popular":"Popular","once":"one-time payment","see":"See example","order":"Order in Telegram",
@@ -653,7 +652,6 @@ ru:{
 "f.eye":"В каждом сайте","f.title":"Что вы получаете",
 "f1.t":"Удобно на телефоне","f1.d":"Дизайн подстраивается под телефон, планшет и компьютер.",
 "f2.t":"Быстрая загрузка","f2.d":"Страницы открываются за секунду, клиенты не уходят.",
-"f3.t":"Вас найдут в Google","f3.d":"Настрою сайт, чтобы ваш бизнес находили в поиске.",
 "f4.t":"Помощь после запуска","f4.d":"Остаюсь на связи и помогаю с изменениями после запуска.",
 "p.eye":"Цены","p.title":"Выберите тариф","p.sub":"Тарифы отличаются тем, насколько красивый и удобный дизайн. Нажмите «Посмотреть пример», чтобы сравнить один и тот же сайт в трёх вариантах.",
 "popular":"Популярный","once":"разовая оплата","see":"Посмотреть пример","order":"Заказать в Telegram",
@@ -684,7 +682,6 @@ uz:{
 "f.eye":"Har bir saytda","f.title":"Siz nima olasiz",
 "f1.t":"Telefonda qulay","f1.d":"Dizayn telefon, planshet va kompyuterga moslashadi.",
 "f2.t":"Tez yuklanish","f2.d":"Sahifalar bir soniyada ochiladi, mijozlar ketib qolmaydi.",
-"f3.t":"Google’da topiladi","f3.d":"Biznesingizni qidiruvda topishlari uchun sozlayman.",
 "f4.t":"Ishga tushgandan keyin yordam","f4.d":"Aloqada qolaman va o‘zgarishlarda yordam beraman.",
 "p.eye":"Narxlar","p.title":"Tarifni tanlang","p.sub":"Tariflar dizayn qanchalik chiroyli va qulayligi bilan farq qiladi. Bitta saytni uch xil ko‘rinishda solishtirish uchun «Namunani ko‘rish» ni bosing.",
 "popular":"Ommabop","once":"bir martalik to‘lov","see":"Namunani ko‘rish","order":"Telegramda buyurtma berish",
@@ -708,15 +705,15 @@ uz:{
 "mk.menu":"Menyu","mk.contact":"Aloqa","mk.reviews":"Fikrlar","mk.about":"Biz haqimizda","cf.h":"Shaharni uyg‘otadigan qahva","cf.p":"Har tong yangi qahva va pishiriqlar.","cf.b":"Buyurtma","cf.addr":"Toshkent, Amir Temur ko‘chasi, 12","cf.hours":"Har kuni 8:00–22:00","cf.rev1":"Shahardagi eng zo‘r kapuchino!","cf.rev2":"Shinam joy, tez xizmat.","cf.form":"Stol band qilish","cf.name":"Ismingiz","cf.send":"Yuborish","px.h":"Qahva — bu san’at","px.p":"Toshkentda qovurilgan specialty qahva. Har bir chashka qo‘lda tayyorlanadi.","px.b":"Buyurtma berish","px.b2":"Menyuni ko‘rish","px.t1":"Issiq","px.t2":"Sovuq","px.t3":"Desertlar","px.add":"Qo‘shish","px.order":"Buyurtmangiz:","px.mq":"YANGI QOVURILGAN · SPECIALTY · DESERTLAR · NONUSHTA · ","cur":"so‘m"
 }};
 const T3={
-en:{"hero.t1":"Websites that","hero.t2":"bring","hero.t3":"you clients.","hero.badge":"taking orders · UZ / RU / EN","hero.note":"reply in Telegram · from $300 · 3 design levels",
+en:{"hero.t1":"Websites that","hero.t2":"bring","hero.t3":"you clients.","hero.badge":"taking orders · UZ / RU / EN","hero.note":"reply in Telegram · from $200 · 3 design levels",
 "f.title":"Everything you need, <em>already inside</em>.","p.title":"You pay for <em>design</em>, not for a template.","s.title":"Four steps from <em>idea</em> to launch.",
 "c.title":"A site people <em>want</em> to open.","c.eye":"what’s next",
 "pp.title":"new project","pp.live":"in progress","pp.n1":"Request in Telegram","pp.s1":"you write, we agree on a plan","pp.n2":"Design","pp.s2":"you approve the look","pp.n3":"Development","pp.s3":"phone + computer","pp.n4":"Launch","pp.s4":"the site is online","pp.log1":"design approved","pp.log2":"mobile version checked","pp.log3":"site launched"},
-ru:{"hero.t1":"Сайты, которые","hero.t2":"приводят","hero.t3":"клиентов.","hero.badge":"принимаю заказы · UZ / RU / EN","hero.note":"ответ в Telegram · от $300 · 3 уровня дизайна",
+ru:{"hero.t1":"Сайты, которые","hero.t2":"приводят","hero.t3":"клиентов.","hero.badge":"принимаю заказы · UZ / RU / EN","hero.note":"ответ в Telegram · от $200 · 3 уровня дизайна",
 "f.title":"Всё нужное <em>уже внутри</em>.","p.title":"Вы платите за <em>дизайн</em>, а не за шаблон.","s.title":"Четыре шага от <em>идеи</em> до запуска.",
 "c.title":"Сайт, который <em>хочется</em> открыть.","c.eye":"что дальше",
 "pp.title":"новый проект","pp.live":"в работе","pp.n1":"Заявка в Telegram","pp.s1":"вы пишете, обсуждаем план","pp.n2":"Дизайн","pp.s2":"вы утверждаете вид","pp.n3":"Разработка","pp.s3":"телефон + компьютер","pp.n4":"Запуск","pp.s4":"сайт в интернете","pp.log1":"дизайн утверждён","pp.log2":"мобильная версия проверена","pp.log3":"сайт запущен"},
-uz:{"hero.t1":"Mijoz","hero.t2":"olib keladigan","hero.t3":"saytlar.","hero.badge":"buyurtmalar qabul qilinadi · UZ / RU / EN","hero.note":"Telegramda javob · $300 dan · 3 xil dizayn",
+uz:{"hero.t1":"Mijoz","hero.t2":"olib keladigan","hero.t3":"saytlar.","hero.badge":"buyurtmalar qabul qilinadi · UZ / RU / EN","hero.note":"Telegramda javob · $200 dan · 3 xil dizayn",
 "f.title":"Kerakli hamma narsa <em>ichida</em>.","p.title":"Siz shablon uchun emas, <em>dizayn</em> uchun to‘laysiz.","s.title":"G‘oyadan ishga tushirishgacha <em>to‘rt</em> qadam.",
 "c.title":"Ochgingiz <em>keladigan</em> sayt.","c.eye":"keyingi qadam",
 "pp.title":"yangi loyiha","pp.live":"jarayonda","pp.n1":"Telegramda ariza","pp.s1":"siz yozasiz, reja kelishamiz","pp.n2":"Dizayn","pp.s2":"ko‘rinishni tasdiqlaysiz","pp.n3":"Ishlab chiqish","pp.s3":"telefon + kompyuter","pp.n4":"Ishga tushirish","pp.s4":"sayt internetda","pp.log1":"dizayn tasdiqlandi","pp.log2":"mobil versiya tekshirildi","pp.log3":"sayt ishga tushdi"}};
